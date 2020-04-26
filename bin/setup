@@ -8,4 +8,4 @@
 # should Just Work.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 npm install
-bin/parking_lot.sh
+./node_modules/jasmine/bin/jasmine.js
