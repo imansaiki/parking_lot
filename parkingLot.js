@@ -61,10 +61,10 @@ const status =  () => {
     if(parkingSpace.length==0){
         return "there is no parking lot"
     }else{
-        let statusPrint="Slot No. Registration No./n";
+        let statusPrint="Slot No. Registration No.\n";
         for(let i=0; i< parkingSpace.length; i++){
             statusPrint+=i+" ";
-            statusPrint+=parkingSpace[i]+"/n";
+            statusPrint+=parkingSpace[i]+"\n";
         }
         return statusPrint;
     }
