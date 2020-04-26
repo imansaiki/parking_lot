@@ -4,8 +4,14 @@
   "description": "Challenge Dkatalis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "bin/run_functional_test.sh",
+    "package": "bin/setup.sh",
+    "start": "bin/parking_lot.sh"
   },
   "author": "Iman Setya A",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
 }
