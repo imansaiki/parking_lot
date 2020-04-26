@@ -1,5 +1,6 @@
 const fs = require('fs');
 const readline = require('readline');
+const parkingLot = require('./parkingLot')
 let source;
 if (process.argv[2]) {
     if(fs.existsSync('./input/'+process.argv[2])){
@@ -18,7 +19,31 @@ const rl = readline.createInterface({
 });
 const startProcess = () =>{
     rl.on('line', async (input) => {
-        console.log(input);
+        let line = input.split(" ");
+        let result;
+        switch (line[0]) {
+            case "create_parking_lot":
+                 result = parkingLot.createParkingLot(line[1]);
+                console.log(result);
+                break;
+            case "park":
+                 result = parkingLot.park(line[1]);
+                console.log(result);
+                break;
+            case "leave":
+                 result =parkingLot.leave(line[1],line[2]);
+                console.log(result);
+                break;
+            case "status":
+                 result =parkingLot.status();
+                console.log(result);
+                break;
+            
+        
+            default:
+                console.log("check your input")
+                break;
+        }
     })
 }
 startProcess();

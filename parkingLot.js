@@ -34,24 +34,24 @@ const park =  (regNumber) => {
     
     
 }
-const leave =  (slot,hour) => {
-    if (isNaN(slot)) {
-        return "slot must be a number"
+const leave =  (regNumber,hour) => {
+    if (regNumber==="") {
+        return "Registry No. cannot be empty"
     }else{
         if (isNaN(hour)) {
             return "hour must be a number"
         }else{
-            if(parkingSpace[parseInt(slot)-1]===""){
-                return `there is no car at slot : ${slot}`;
+            if(parkingSpace.indexOf(regNumber)==-1){
+                return `there is no car with registry no : ${regNumber}`;
             }else{
-                let leavingCar= parkingSpace[parseInt(slot)-1];
+                let slot= parkingSpace.indexOf(regNumber)+1;
                 parkingSpace[parseInt(slot)-1]="";
                 let charge =10;
                 if(hour>2){
                     charge+= (10*(hour-2)) 
                 }
                 
-                return `Registration number ${leavingCar} Slot Number ${slot} is free with Charge ${charge} `
+                return `Registration number ${regNumber} Slot Number ${slot} is free with Charge ${charge} `
             }
         }
     }
@@ -63,7 +63,8 @@ const status =  () => {
     }else{
         let statusPrint="Slot No. Registration No.\n";
         for(let i=0; i< parkingSpace.length; i++){
-            statusPrint+=i+" ";
+            let slot=i+1;
+            statusPrint+=slot+" ";
             statusPrint+=parkingSpace[i]+"\n";
         }
         return statusPrint;
