@@ -77,9 +77,11 @@ const status =  () => {
     }else{
         let statusPrint="Slot No. Registration No.\n";
         for(let i=0; i< parkingSpace.length; i++){
-            let slot=i+1;
-            statusPrint+=slot+" ";
-            statusPrint+=parkingSpace[i]+"\n";
+            if(parkingSpace[i]!=""){
+                let slot=i+1;
+                statusPrint+=slot+" ";
+                statusPrint+=parkingSpace[i]+"\n";
+            }
         }
         return statusPrint;
     }

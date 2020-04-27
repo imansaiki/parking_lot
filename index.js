@@ -6,7 +6,7 @@ if (process.argv[2]) {
     if(fs.existsSync('./input/'+process.argv[2])){
         source=fs.createReadStream('./input/'+process.argv[2]);
     }else{
-        console.log("file not found");
+        console.log("file not found\n You can check the file at input directory");
         process.exit();
     }
 }else{
@@ -38,10 +38,18 @@ const startProcess = () =>{
                  result =parkingLot.status();
                 console.log(result);
                 break;
+            case "help":
+                console.log("");
+                console.log("List of Function :")
+                console.log("--create_parking_lot <Number>");
+                console.log("--park <String>");
+                console.log("--leave <String> <Number>");
+                console.log("--status");
+                break;
             
         
             default:
-                console.log("check your input")
+                console.log("check your input format\n You can check available function by typing help")
                 break;
         }
     })
