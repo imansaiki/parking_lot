@@ -40,23 +40,27 @@ const park =  (regNumber) => {
     
 }
 const leave =  (regNumber,hour) => {
-    if (regNumber==="") {
+    if (regNumber==="" || typeof(regNumber) == 'undefined' || regNumber === null) {
         return "Registry No. cannot be empty"
     }else{
-        if (isNaN(hour)) {
+        if (isNaN(hour) || hour==="" || isNaN(escape(hour))) {
             return "hour must be a number"
         }else{
-            if(parkingSpace.indexOf(regNumber)==-1){
-                return `there is no car with registry no : ${regNumber}`;
+            if(parkingSpace.length===0){
+                return "There is no parking lot";
             }else{
-                let slot= parkingSpace.indexOf(regNumber)+1;
-                parkingSpace[parseInt(slot)-1]="";
-                let charge =10;
-                if(hour>2){
-                    charge+= (10*(hour-2)) 
+                if(parkingSpace.indexOf(escape(regNumber))==-1){
+                    return `there is no car with registry no : ${escape(regNumber)}`;
+                }else{
+                    let slot= parkingSpace.indexOf(escape(regNumber))+1;
+                    parkingSpace[parseInt(slot)-1]="";
+                    let charge =10;
+                    if(hour>2){
+                        charge+= (10*(hour-2)) 
+                    }
+                    
+                    return `Registration number ${escape(regNumber)} Slot Number ${slot} is free with Charge ${charge} `
                 }
-                
-                return `Registration number ${regNumber} Slot Number ${slot} is free with Charge ${charge} `
             }
         }
     }

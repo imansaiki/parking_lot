@@ -1,6 +1,6 @@
 const parking = require("../parkingLot.js");
 
-describe("check status function", () =>{
+describe("check status function :\n", () =>{
     afterEach(()=>{
         parking.resetParking();
     });
