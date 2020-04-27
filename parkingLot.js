@@ -72,6 +72,10 @@ const status =  () => {
 
 }
 
+const resetParking = () =>{
+    parkingSpace =[];
+}
+
 
 
 module.exports = {
@@ -79,4 +83,5 @@ module.exports = {
     park,
     leave,
     status,
+    resetParking
   }

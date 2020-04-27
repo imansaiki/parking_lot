@@ -1,6 +1,9 @@
 const parking = require("../parkingLot.js");
 
 describe("check park function", () =>{
+    afterAll(()=>{
+        parking.resetParking();
+    });
     it("Empty string input", ()=>{
         expect(parking.park("")).toBe("Registration No. cannot be Empty")
     });
