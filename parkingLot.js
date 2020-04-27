@@ -17,19 +17,24 @@ const park =  (regNumber) => {
     }else{
         let flag=0;
         let number;
-        for(let i=0; i<=parkingSpace.length; i++){
-            if(parkingSpace[i]===""){
-                parkingSpace[i]=escape(regNumber);
-                flag=1;
-                number=i+1; 
-                break;
+        if(parkingSpace.length==0){
+            return "There is no parking lot"
+        }else{
+            for(let i=0; i<=parkingSpace.length; i++){
+                if(parkingSpace[i]===""){
+                    parkingSpace[i]=escape(regNumber);
+                    flag=1;
+                    number=i+1; 
+                    break;
+                }
+            }
+            if (flag===0){
+                return "Sorry, parking lot is full";
+            }else{
+                return `Alocated slot number: ${number}`
             }
         }
-        if (flag===0){
-            return "Sorry, parking lot is full";
-        }else{
-            return `Alocated slot number: ${number}`
-        }
+        
     }
     
     
