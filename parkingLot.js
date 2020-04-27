@@ -12,14 +12,14 @@ const createParkingLot = (initSize) =>{
     
 }
 const park =  (regNumber) => {
-    if(regNumber===""){
+    if(regNumber==="" || typeof(regNumber) == 'undefined' || regNumber === null){
         return "Registration No. cannot be Empty";
     }else{
         let flag=0;
         let number;
         for(let i=0; i<=parkingSpace.length; i++){
             if(parkingSpace[i]===""){
-                parkingSpace[i]=regNumber;
+                parkingSpace[i]=escape(regNumber);
                 flag=1;
                 number=i+1; 
                 break;
