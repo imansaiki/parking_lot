@@ -7,5 +7,6 @@
 # After this is run, bin/parking_lot
 # should Just Work.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-npm install
+echo "check required dependencies"
+npm list jasmine ||npm install
 ./node_modules/jasmine/bin/jasmine.js

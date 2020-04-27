@@ -7,6 +7,8 @@
 # This variable contains absolute path of this `parking_lot` script
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 #npm install
+echo "checking node version"
+node -v || echo "install node.js and npm first"
 node index.js $1
 
 # Use DIR variable above to pinpoint your jar/executable/main class
