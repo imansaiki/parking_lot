@@ -1,7 +1,7 @@
 const parking = require("../parkingLot.js");
 
 describe("check leave function", () =>{
-    afterAll(()=>{
+    afterEach(()=>{
         parking.resetParking();
     });
     it("Empty  slot input", ()=>{

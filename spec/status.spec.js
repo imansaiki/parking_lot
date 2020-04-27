@@ -1,7 +1,7 @@
 const parking = require("../parkingLot.js");
 
 describe("check status function", () =>{
-    afterAll(()=>{
+    afterEach(()=>{
         parking.resetParking();
     });
     it("Parking lot not initialized", ()=>{

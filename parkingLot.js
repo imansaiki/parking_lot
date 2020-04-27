@@ -1,7 +1,7 @@
 let parkingSpace =[];
 const createParkingLot = (initSize) =>{
     
-    if (isNaN(initSize)) {
+    if (isNaN(initSize) || initSize==="" ||isNaN(escape(initSize))) {
         return "Please insert number for parking lot size";
     }else{
         for(let i = 0; i<parseInt(initSize); i++){
