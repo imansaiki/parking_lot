@@ -4,6 +4,7 @@ describe("check create parking lot function  :\n", () =>{
     afterEach(()=>{
         parking.resetParking();
     });
+    //test abnormal param
     it("Invalid number input", ()=>{
         expect(parking.createParkingLot("asdaasdasd")).toBe("Please insert number for parking lot size")
     });
@@ -16,6 +17,7 @@ describe("check create parking lot function  :\n", () =>{
     it("escape sequence input", ()=>{
         expect(parking.createParkingLot("\n")).toBe("Please insert number for parking lot size")
     });
+    //test corremt param
     it("Correct string number input", ()=>{
         expect(parking.createParkingLot("11")).toBe("Created a parking lot with 11 slots")
     });

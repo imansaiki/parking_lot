@@ -1,4 +1,5 @@
 let parkingSpace =[];
+//initialize parking lot size
 const createParkingLot = (initSize) =>{
     
     if (isNaN(initSize) || initSize==="" ||isNaN(escape(initSize))) {
@@ -11,6 +12,7 @@ const createParkingLot = (initSize) =>{
     }
     
 }
+//register car to parking slot
 const park =  (regNumber) => {
     if(regNumber==="" || typeof(regNumber) == 'undefined' || regNumber === null){
         return "Registration No. cannot be Empty";
@@ -39,6 +41,7 @@ const park =  (regNumber) => {
     
     
 }
+//free parking space and calculate fee
 const leave =  (regNumber,hour) => {
     if (regNumber==="" || typeof(regNumber) == 'undefined' || regNumber === null) {
         return "Registry No. cannot be empty"
@@ -71,6 +74,7 @@ const leave =  (regNumber,hour) => {
     }
 
 }
+//return content of parking lot
 const status =  () => {
     if(parkingSpace.length==0){
         return "there is no parking lot"
@@ -87,7 +91,7 @@ const status =  () => {
     }
 
 }
-
+// reset parking lot
 const resetParking = () =>{
     parkingSpace =[];
 }

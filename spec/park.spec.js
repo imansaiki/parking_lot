@@ -4,6 +4,7 @@ describe("check park function :\n", () =>{
     afterEach(()=>{
         parking.resetParking();
     });
+    //test abnormal value for param
     it("Empty string input", ()=>{
         expect(parking.park("")).toBe("Registration No. cannot be Empty")
     });
@@ -14,6 +15,7 @@ describe("check park function :\n", () =>{
         parking.createParkingLot(5);
         expect(parking.park("\n")).toContain("Alocated slot number:")
     });
+    // test normal value for param
     it("No Parking Lot", ()=>{
         expect(parking.park("KA-01-HH-1234")).toBe("There is no parking lot")
     });

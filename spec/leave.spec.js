@@ -14,7 +14,7 @@ describe("check leave function :\n", () =>{
     it("Escape sequence registy input", ()=>{
         expect(parking.leave("\n",10)).not.toBe(`Registry No. cannot be empty`)
     });
-    //test registry param
+    //test normal value for registry param
     it("no parking lot", ()=>{
         expect(parking.leave("KA-01-HH-1231",10)).toBe(`There is no parking lot`)
     });
@@ -30,7 +30,7 @@ describe("check leave function :\n", () =>{
         parking.park("KA-01-HH-1232");
         expect(parking.leave("KA-01-HH-1231",10)).toBe(`there is no car with registry no : KA-01-HH-1231`)
     });
-    //abnormal param hour
+    //abnormal value for param hour
     it("Empty string hour input", ()=>{
         expect(parking.leave("KA-01-HH-1231","")).toBe("hour must be a number")
     });
@@ -43,7 +43,7 @@ describe("check leave function :\n", () =>{
     it("Negative hour input", ()=>{
         expect(parking.leave("KA-01-HH-1231",-1)).toBe("hour must be a positive number")
     });
-    //test hour param
+    //test normal value for hour param
     it("zero hour", ()=>{
         parking.createParkingLot(2);
         parking.park("KA-01-HH-1231");

@@ -2,14 +2,18 @@ const fs = require('fs');
 const readline = require('readline');
 const parkingLot = require('./parkingLot')
 let source;
+
+//check if file input included
 if (process.argv[2]) {
     if(fs.existsSync('./input/'+process.argv[2])){
+        //use file as stdin
         source=fs.createReadStream('./input/'+process.argv[2]);
     }else{
         console.log("file not found\n You can check the file at input directory");
         process.exit();
     }
 }else{
+    //use user input terminal as stdin
     source=process.stdin;
 }
 const rl = readline.createInterface({
@@ -17,6 +21,7 @@ const rl = readline.createInterface({
     output: process.stdout
    
 });
+//main function
 const startProcess = () =>{
     rl.on('line', async (input) => {
         let line = input.split(" ");
@@ -54,4 +59,5 @@ const startProcess = () =>{
         }
     })
 }
+// initialize main function
 startProcess();
